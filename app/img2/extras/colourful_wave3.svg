@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="1936" height="751" viewBox="0 0 1936 751">
+  <defs>
+    <clipPath id="clip-path">
+      <path id="Path_34762" data-name="Path 34762" d="M0,0H1936V751H0Z" transform="translate(-5302 3757)" fill="#fff"/>
+    </clipPath>
+    <linearGradient id="linear-gradient" x1="0.582" y1="0.66" x2="0.5" y2="1" gradientUnits="objectBoundingBox">
+      <stop offset="0" stop-color="#ff0090"/>
+      <stop offset="1" stop-color="#540c41"/>
+    </linearGradient>
+  </defs>
+  <g id="Mask_Group_7745" data-name="Mask Group 7745" transform="translate(5302 -3757)" clip-path="url(#clip-path)">
+    <g id="Group_20355" data-name="Group 20355" transform="translate(0 -1196.653)">
+      <g id="Group_20354" data-name="Group 20354">
+        <path id="That_s_enough_" data-name="That's enough!" d="M0-171.149S240.153-365.811,628.509-97.5c106.31,73.448,287.03,147.13,435.24,58.432S1339.28-19.854,1438.4,79.887c215.945,217.3,497.6-24.175,497.6-24.175V1670.08s-559.377,140.156-831.53-122.206c-109.4-105.469-236.615-401.9-508.585-170.684S0,1385.556,0,1385.556Z" transform="translate(-5302 3996.178)" fill="url(#linear-gradient)"/>
+        <path id="Sauce" d="M0,1389.388s240.153,168.771,628.509-63.853c106.31-63.679,287.03-127.561,435.24-50.661s275.531-16.659,374.65-103.133c215.945-188.4,497.6,20.959,497.6,20.959V-206.951S1376.623-328.465,1104.471-101C995.066-9.558,867.856,247.449,595.885,46.984S0,39.73,0,39.73Z" transform="translate(-5302 4074.016)" fill="#f5f5f5" opacity="0.186"/>
+        <path id="More_Sauce" data-name="More Sauce" d="M1936-171.149S1695.848-365.811,1307.491-97.5c-106.31,73.448-287.03,147.13-435.24,58.432S596.721-19.854,497.6,79.887C281.657,297.185,0,55.712,0,55.712V860.444s337.832,464.492,661.772,179.5c168.447-148.2,498.707,278.771,790.971,80.382S1936,1385.556,1936,1385.556Z" transform="translate(-5302 4093.322)" fill="#f5f5f5"/>
+      </g>
+    </g>
+  </g>
+</svg>

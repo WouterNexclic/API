@@ -1,0 +1,42 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="1936" height="751" viewBox="0 0 1936 751">
+  <defs>
+    <clipPath id="clip-path">
+      <path id="Path_34760" data-name="Path 34760" d="M0,0H1936V751H0Z" transform="translate(-5681 1791)" fill="#fff"/>
+    </clipPath>
+    <linearGradient id="linear-gradient" x1="0.483" y1="0.794" x2="0.5" y2="1" gradientUnits="objectBoundingBox">
+      <stop offset="0" stop-color="#ff0090"/>
+      <stop offset="1" stop-color="#140080"/>
+    </linearGradient>
+    <filter id="Hero_Header" x="-85.059" y="-767.233" width="2102.101" height="1168.803" filterUnits="userSpaceOnUse">
+      <feOffset dy="12" input="SourceAlpha"/>
+      <feGaussianBlur stdDeviation="26" result="blur"/>
+      <feFlood flood-opacity="0.129"/>
+      <feComposite operator="in" in2="blur"/>
+      <feComposite in="SourceGraphic"/>
+    </filter>
+    <linearGradient id="linear-gradient-2" x1="0.584" y1="0.552" x2="-0.408" y2="1.138" gradientUnits="objectBoundingBox">
+      <stop offset="0" stop-color="#ff0057"/>
+      <stop offset="1" stop-color="#140080"/>
+    </linearGradient>
+  </defs>
+  <g id="Group_20351" data-name="Group 20351" transform="translate(5681 -1791)">
+    <g id="Mask_Group_7743" data-name="Mask Group 7743" clip-path="url(#clip-path)">
+      <g id="Group_20350" data-name="Group 20350">
+        <g id="Receipe" transform="translate(-5688.059 1086.059)">
+          <path id="Hero_Header-2" data-name="Hero Header" d="M0,21.757S164.431-40.494,332.313,93.993s391.508,243.267,580.1,158.2C1124.773,156.409,1402.1,99.013,1607.679-42.48S1946.1,21.757,1946.1,21.757V852.489s-151.852,13.4-343.35,52.193S1396.5,775.592,1180.107,1007.658c-53.882,57.785-112.623,168.518-335.721,188.834S498.81,1076.368,287.714,1088.923,0,1246.714,0,1246.714Z" transform="translate(0 92.157)" fill="url(#linear-gradient)"/>
+          <g transform="matrix(1, 0, 0, 1, 7.06, 704.94)" filter="url(#Hero_Header)">
+            <path id="Hero_Header-3" data-name="Hero Header" d="M0,834.474s164.431,47.09,332.313-54.644,391.508-184.021,580.1-119.674c212.362,72.459,489.691,115.877,695.268,222.911S1946.1,834.474,1946.1,834.474V206.058s-151.852-10.137-343.35-39.482-206.248,97.652-422.644-77.9C1126.224,44.967,1067.484-38.8,844.385-54.166S498.81,36.7,287.714,27.205,0-92.157,0-92.157Z" transform="translate(-7.06 -609.08)" fill="#ff62ef"/>
+          </g>
+          <path id="Hero_Header-4" data-name="Hero Header" d="M1946.1,1182.5s-164.431,64.776-332.313-75.167S1222.28,854.2,1033.69,942.712C821.328,1042.385,544,1102.11,338.422,1249.344S0,1182.5,0,1182.5V318.063s151.852-13.945,343.35-54.311S549.6,398.08,765.994,156.6C819.877,96.469,878.617-18.757,1101.716-39.9s345.575,125,556.672,111.933S1946.1-92.157,1946.1-92.157Z" transform="translate(0.016 146.545)" opacity="0.759" fill="url(#linear-gradient-2)"/>
+          <g id="Group_12" data-name="Group 12" transform="translate(602.275 274.605)">
+            <g id="Group_10" data-name="Group 10" transform="translate(0 0)">
+              <text id="Tiramisu_gummies_chocolate_bar_pie_cake_pastry._Sweet_muffin_sugar_plum_pastry_wafer_lemon_drops_biscuit_topping_carrot_cake._Muffin_apple_pie_candy_canes_gingerbread_halvah_halvah._Toffee_toffee_powder_powder_candy_canes._Wafer_danish_donut_gingerbread_ca" data-name="Tiramisu gummies chocolate bar pie cake pastry. Sweet muffin sugar plum pastry wafer lemon drops biscuit topping carrot cake. Muffin apple pie candy canes gingerbread halvah halvah. Toffee toffee powder powder candy canes. Wafer danish donut gingerbread ca" transform="translate(0 171.815)" fill="#fff" font-size="22" font-family="OpenSans, Open Sans"><tspan x="8.771" y="24">Tiramisu gummies chocolate bar pie cake pastry. Sweet muffin sugar plum </tspan><tspan x="29.863" y="56">pastry wafer lemon drops biscuit topping carrot cake. Muffin apple pie </tspan><tspan x="32.162" y="88">candy canes gingerbread halvah halvah. Toffee toffee powder powder </tspan><tspan x="21.806" y="120">candy canes. Wafer danish donut gingerbread carrot cake marshmallow </tspan><tspan x="7.573" y="152">tart. Apple pie jelly beans chocolate cake. Liquorice muffin brownie jujubes </tspan><tspan x="1.466" y="184">gingerbread dragée donut. Marshmallow pudding chupa chups. Tart dragée </tspan><tspan x="13.39" y="216">jelly-o cookie carrot cake muffin sweet sugar plum chocolate cake. Lemon </tspan><tspan x="11.564" y="248">drops marzipan dessert. Tart macaroon chocolate toffee pie sweet roll pie </tspan><tspan x="31.882" y="280">tiramisu lemon drops. Croissant muffin gingerbread. Icing cheesecake </tspan><tspan x="59.092" y="312">bonbon muffin topping pudding topping fruitcake marshmallow. </tspan></text>
+              <text id="Recipe" transform="translate(375.105 65)" fill="#fff" font-size="72" font-family="Arial-BoldMT, Arial" font-weight="700"><tspan x="-118.055" y="0">Recipe</tspan></text>
+            </g>
+          </g>
+        </g>
+        <path id="Union_8" data-name="Union 8" d="M16046.178,655.065l-6.119,0V540.49s285.838,113.977,502.688,11.348c99.537-47.107,227.387-98.074,376.223-56.18s330.307,7.091,437.064-27.6c389.982-126.724,631.145-34.784,631.145-34.784V655.862h-.059v791.533s-179.809-1.95-330.807-115.232-179.322,166.194-255.791,181.225c-43.2,8.491-99.236,10.1-177.365,99.943-53.74,61.8-112.324,180.214-334.83,201.94-114,11.131-201.666-22.868-288.369-56.867-82.518-32.36-164.166-64.716-266.83-58.167-210.534,13.424-286.949,168.74-286.949,168.74Z" transform="translate(-21728.121 495.021)" fill="#f5f5f5"/>
+      </g>
+    </g>
+  </g>
+</svg>

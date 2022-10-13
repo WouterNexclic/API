@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="1936" height="538.678" viewBox="0 0 1936 538.678">
+  <defs>
+    <linearGradient id="linear-gradient" x1="0.5" x2="0.5" y2="1" gradientUnits="objectBoundingBox">
+      <stop offset="0" stop-color="#ff0080"/>
+      <stop offset="1" stop-color="#5e0934"/>
+    </linearGradient>
+  </defs>
+  <g id="Group_20360" data-name="Group 20360" transform="translate(1514 -5768.301)">
+    <g id="Group_20359" data-name="Group 20359">
+      <path id="More_Sauce" data-name="More Sauce" d="M0-171.254S239.783-365.616,627.542-97.718c106.146,73.335,286.588,146.9,434.57,58.342S1337.218-20.191,1436.185,79.4C1651.8,296.36,1936,55.405,1936,55.405V297.616L0,299.306Z" transform="translate(-1514 6007.673)" fill="url(#linear-gradient)"/>
+      <path id="Sauce" d="M1936-171.254s-239.783-194.362-627.542,73.536c-106.146,73.335-286.588,146.9-434.57,58.342S598.782-20.191,499.815,79.4C284.2,296.36,0,55.405,0,55.405V297.616l1936,1.69Z" transform="translate(-1514 6007.673)" fill="#fff"/>
+    </g>
+  </g>
+</svg>
