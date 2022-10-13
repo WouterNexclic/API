@@ -32,7 +32,7 @@ if (isset($Username)) {
 
 require_once 'conn.php';
 
-$var = EXISTS (("SELECT * FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_NAME = 'users' AND TABLE_SCHEMA = 'snap-bang'"));
+"SELECT * FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_NAME = 'users' AND TABLE_SCHEMA = 'snap-bang'"
 
 if ( $var == 1){
     $query = "INSERT INTO users (Gender, Looking_for, Username, Email, Password, Birthday, Country, City, Terms_accepted) VALUES(:Gender, :Looking_for, :Username, :Email, :Password, :Birthday, :Country, :City, :Terms_accepted)";
