@@ -1565,8 +1565,8 @@
                                                     <!-- ngInclude: 'app/sections/landing-partials/register-fields/looking-for.html' -->
                                                 <div class="right ng-scope" ng-include="'app/sections/landing-partials/register-fields/email.html'">
                                                             <select id="looking_for" name="looking_for">
-                                                                <option value="man" selected>Looking for a woman</option>
-                                                                <option value="woman">Looking for a man</option>
+                                                                <option value="woman" selected>Looking for a woman</option>
+                                                                <option value="man">Looking for a man</option>
                                                                 <option value="pair">Looking for a couple</option>
                                                                 <option value="trans">Looking for a transgender</option>
                                                             </select>
@@ -1865,7 +1865,7 @@
                                                         <div ng-include="'app/sections/landing-partials/register-fields/accept-terms.html'"
                                                              class="ng-scope"><p class="terms ng-scope"
                                                                                  ng-class="{'error': !vm.termsAccepted &amp;&amp; vm.isRegisterAttempted}">
-                                                                <input type="checkbox" name="terms_accepted"
+                                                                <input type="checkbox" name="terms_accepted" value="Yes"
                                                                        class="ng-pristine ng-untouched ng-valid">
                                                                 <span dom-replace="vm.acceptPolicyHTML"><span
                                                                             class="ng-scope">I accept the </span><a

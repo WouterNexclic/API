@@ -1,6 +1,6 @@
 <?php
 $dbHost = 'localhost';
-$dbName = 'snap-bang';
+$dbName = 'snap_bang';
 $dbUser = 'root';
 $dbPass = '';
 
