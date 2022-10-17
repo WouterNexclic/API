@@ -2096,7 +2096,7 @@ input:invalid {
     background-color: #F4FEFF
 }
 
-input[type=email], input[type=password], input[type=tel], input[type=text], textarea {
+input[type=email], input[type=password], input[type=tel], input[type=text], select, textarea {
     -webkit-appearance: none;
     -moz-appearance: none;
     appearance: none;
@@ -6592,7 +6592,7 @@ input.cmn-toggle-round-flat:checked + label {
     display: inherit
 }
 
-.register-form .form-group input.form-control {
+.register-form .form-group input.form-control, select{
     width: 100%
 }
 
@@ -6607,7 +6607,7 @@ input.cmn-toggle-round-flat:checked + label {
     margin-bottom: 3px
 }
 
-.register-form .form-group > input {
+.register-form .form-group > input, select {
     color: #fff;
     box-shadow: none;
     width: 100%;
