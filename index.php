@@ -1499,6 +1499,31 @@
                         }
                     }
 
+                    @media only screen and (max-width: 975px){
+                        button.custom-second-btn.ng-binding{
+                            width: 100%;
+                        }
+                    }
+
+                    .text-black{
+                        color: black;
+                    }
+                    .text-black option{
+                        color: black;
+                    }
+                    select{
+                        color: #000000;
+                        background: white;
+                        border-radius: 27px;
+                        height: 54px;
+                        padding: 0 25px;
+                        font-family: Montserrat, sans-serif !important;
+                        font-size: 14px !important;
+                        letter-spacing: .7px;
+                        font-weight: 500;
+                        margin-bottom: 15px;
+                    }
+
 
                 </style>
                 <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700&amp;display=swap"
@@ -1512,9 +1537,6 @@
                                 <div class="register-container ng-scope">
                                     <div class="register-content">
                                         <div class="register-header">
-                                            <div class="register-header-title ng-binding">
-                                                VUL HIER JE INFORMATIE IN
-                                            </div>
                                             <div class="form-close-mobile"><a href="#/landing/"
                                                                               ui-sref="landing.default({})"><span
                                                             class="icon icon-icon-delete"></span></a></div>
@@ -1527,25 +1549,30 @@
                                                 <?php if(!empty($msg_name)){echo "<p class='note'>".$msg_name."</p>";}?>
                                                 <?php if(!empty($msg2_name)){echo "<p class='note'>".$msg2_name."</p>";}?>
 
-                                                <div class="header ng-binding">Registreren</div>
+                                                <div class="header ng-binding">Register</div>
 
                                                 <!-- ngInclude: 'app/sections/landing-partials/register-fields/gender.html' -->
+                                                <div class="left ng-scope" ng-include="'app/sections/landing-partials/register-fields/username.html'">
+                                                            <select id="gender" name="gender">
+                                                                <option value="man" selected>I'm a man</option>
+                                                                <option value="woman">I'm a woman</option>
+                                                                <option value="pair">We are a couple</option>
+                                                                <option value="trans">Im transgender</option>
+                                                            </select>
+                                                    <img src="app/img2/extras/drop_down.svg" style="position: absolute; top: 45px; right: 15px">
+                                                </div>
 
-                                                <select id="gender" name="gender">
-                                                    <option value="man" selected>I'm a man</option>
-                                                    <option value="woman">I'm a woman</option>
-                                                    <option value="pair">We are a couple</option>
-                                                    <option value="trans">Im transgender</option>
-                                                </select>
+                                                    <!-- ngInclude: 'app/sections/landing-partials/register-fields/looking-for.html' -->
+                                                <div class="right ng-scope" ng-include="'app/sections/landing-partials/register-fields/email.html'">
+                                                            <select id="looking_for" name="looking_for">
+                                                                <option value="man" selected>Looking for a woman</option>
+                                                                <option value="woman">Looking for a man</option>
+                                                                <option value="pair">Looking for a couple</option>
+                                                                <option value="trans">Looking for a transgender</option>
+                                                            </select>
+                                                    <img src="app/img2/extras/drop_down.svg" style="position: absolute; top: 112.5px; right: 15px">
+                                                </div>
 
-                                                <!-- ngInclude: 'app/sections/landing-partials/register-fields/looking-for.html' -->
-
-                                                <select id="looking_for" name="looking_for">
-                                                    <option value="man" selected>Looking for a woman</option>
-                                                    <option value="woman">Looking for a man</option>
-                                                    <option value="pair">Looking for a couple</option>
-                                                    <option value="trans">Looking for a transgender</option>
-                                                </select>
 
                                                 <!-- ngInclude: 'app/sections/landing-partials/register-fields/username.html' -->
                                                 <div class="left ng-scope"
@@ -1571,7 +1598,7 @@
                                                         <input type="text"
                                                                class="form-control empty floating-label username-input ng-pristine ng-untouched ng-valid-unicode-regex-alpha-numeric ng-valid-max-numbers ng-invalid ng-invalid-required ng-valid-maxlength"
                                                                name="username" autofocus="autofocus"
-                                                               placeholder="Gebruikersnaam"
+                                                               placeholder="Username"
                                                                style="background-image: url(&quot;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAkCAYAAADo6zjiAAAAAXNSR0IArs4c6QAAAbNJREFUWAntV8FqwkAQnaymUkpChB7tKSfxWCie/Yb+gbdeCqGf0YsQ+hU95QNyDoWCF/HkqdeiIaEUqyZ1ArvodrOHxanQOiCzO28y781skKwFW3scPV1/febP69XqarNeNTB2KGs07U3Ttt/Ozp3bh/u7V7muheQf6ftLUWyYDB5yz1ijuPAub2QRDDunJsdGkAO55KYYjl0OUu1VXOzQZ64Tr+IiPXedGI79bQHdbheCIAD0dUY6gV6vB67rAvo6IxVgWVbFy71KBKkAFaEc2xPQarXA931ot9tyHphiPwpJgSbfe54Hw+EQHMfZ/msVEEURjMfjCjbFeG2dFxPo9/sVOSYzxmAwGIjnTDFRQLMQAjQ5pJAQkCQJ5HlekeERxHEsiE0xUUCzEO9AmqYQhiF0Oh2Yz+ewWCzEY6aYKKBZCAGYs1wuYTabKdNNMWWxnaA4gp3Yry5JBZRlWTXDvaozUgGTyQSyLAP0dbb3DtQlmcan0yngT2ekE9ARc+z4AvC7nauh9iouhpcGamJeX8XF8MaClwaeROWRA7nk+tUnyzGvZrKg0/40gdME/t8EvgG0/NOS6v9NHQAAAABJRU5ErkJggg==&quot;); background-repeat: no-repeat; background-attachment: scroll; background-size: 16px 18px; background-position: 98% 50%; cursor: auto;">
                                                         <!-- ngIf: vm.showUsernameSuggestion && vm.usernameSuggestion -->
                                                     </div>
@@ -1601,7 +1628,7 @@
                                                                ng-model-options="{ updateOn: 'default blur', debounce: { 'blur': 0, 'default': 2000, '*': 2000 }}"
                                                                ng-maxlength="100" ng-model="vm.profile.email"
                                                                ng-pattern="/^[-a-z0-9~!$%^&amp;*_=+}{\'?]+(\.[-a-z0-9~!$%^&amp;*_=+}{\'?]+)*@[A-Z0-9][A-Z0-9.-]*\.[A-Z]{2,26}$/i"
-                                                               placeholder="E-mailadres" autocomplete="off"
+                                                               placeholder="E-mail" autocomplete="off"
                                                                style="background-image: url(&quot;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAkCAYAAADo6zjiAAAAAXNSR0IArs4c6QAAAbNJREFUWAntV8FqwkAQnaymUkpChB7tKSfxWCie/Yb+gbdeCqGf0YsQ+hU95QNyDoWCF/HkqdeiIaEUqyZ1ArvodrOHxanQOiCzO28y781skKwFW3scPV1/febP69XqarNeNTB2KGs07U3Ttt/Ozp3bh/u7V7muheQf6ftLUWyYDB5yz1ijuPAub2QRDDunJsdGkAO55KYYjl0OUu1VXOzQZ64Tr+IiPXedGI79bQHdbheCIAD0dUY6gV6vB67rAvo6IxVgWVbFy71KBKkAFaEc2xPQarXA931ot9tyHphiPwpJgSbfe54Hw+EQHMfZ/msVEEURjMfjCjbFeG2dFxPo9/sVOSYzxmAwGIjnTDFRQLMQAjQ5pJAQkCQJ5HlekeERxHEsiE0xUUCzEO9AmqYQhiF0Oh2Yz+ewWCzEY6aYKKBZCAGYs1wuYTabKdNNMWWxnaA4gp3Yry5JBZRlWTXDvaozUgGTyQSyLAP0dbb3DtQlmcan0yngT2ekE9ARc+z4AvC7nauh9iouhpcGamJeX8XF8MaClwaeROWRA7nk+tUnyzGvZrKg0/40gdME/t8EvgG0/NOS6v9NHQAAAABJRU5ErkJggg==&quot;); background-repeat: no-repeat; background-attachment: scroll; background-size: 16px 18px; background-position: 98% 50%; cursor: auto;">
                                                     </div>
                                                 </div>
@@ -1627,171 +1654,175 @@
                                                                class="form-control empty floating-label ng-pristine ng-untouched ng-invalid ng-invalid-required ng-valid-minlength"
                                                                name="password" required=""
                                                                ng-model="vm.profile.password" ng-minlength="7"
-                                                               placeholder="Wachtwoord" autocomplete="off"
+                                                               placeholder="Password" autocomplete="off"
                                                                style="background-image: url(&quot;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAkCAYAAADo6zjiAAAAAXNSR0IArs4c6QAAAbNJREFUWAntV8FqwkAQnaymUkpChB7tKSfxWCie/Yb+gbdeCqGf0YsQ+hU95QNyDoWCF/HkqdeiIaEUqyZ1ArvodrOHxanQOiCzO28y781skKwFW3scPV1/febP69XqarNeNTB2KGs07U3Ttt/Ozp3bh/u7V7muheQf6ftLUWyYDB5yz1ijuPAub2QRDDunJsdGkAO55KYYjl0OUu1VXOzQZ64Tr+IiPXedGI79bQHdbheCIAD0dUY6gV6vB67rAvo6IxVgWVbFy71KBKkAFaEc2xPQarXA931ot9tyHphiPwpJgSbfe54Hw+EQHMfZ/msVEEURjMfjCjbFeG2dFxPo9/sVOSYzxmAwGIjnTDFRQLMQAjQ5pJAQkCQJ5HlekeERxHEsiE0xUUCzEO9AmqYQhiF0Oh2Yz+ewWCzEY6aYKKBZCAGYs1wuYTabKdNNMWWxnaA4gp3Yry5JBZRlWTXDvaozUgGTyQSyLAP0dbb3DtQlmcan0yngT2ekE9ARc+z4AvC7nauh9iouhpcGamJeX8XF8MaClwaeROWRA7nk+tUnyzGvZrKg0/40gdME/t8EvgG0/NOS6v9NHQAAAABJRU5ErkJggg==&quot;); background-repeat: no-repeat; background-attachment: scroll; background-size: 16px 18px; background-position: 98% 50%; cursor: auto;">
                                                     </div>
                                                 </div>
                                                 <!-- ngInclude: 'app/sections/landing-partials/register-fields/birth-date.html' -->
+                                                <div class="right ng-scope" ng-include="'app/sections/landing-partials/register-fields/birth-date.html'" style="display: flex; justify-content: space-between">
+                                                        <select id="date" name="date" style="margin-right: 10px">
+                                                            <option selected>DD</option>
+                                                            <option value="01">1</option>
+                                                            <option value="02">2</option>
+                                                            <option value="03">3</option>
+                                                            <option value="04">4</option>
+                                                            <option value="05">5</option>
+                                                            <option value="06">6</option>
+                                                            <option value="07">7</option>
+                                                            <option value="08">8</option>
+                                                            <option value="09">9</option>
+                                                            <option value="10">10</option>
+                                                            <option value="11">11</option>
+                                                            <option value="12">12</option>
+                                                            <option value="13">13</option>
+                                                            <option value="14">14</option>
+                                                            <option value="15">15</option>
+                                                            <option value="16">16</option>
+                                                            <option value="17">17</option>
+                                                            <option value="18">18</option>
+                                                            <option value="19">19</option>
+                                                            <option value="20">20</option>
+                                                            <option value="21">21</option>
+                                                            <option value="22">22</option>
+                                                            <option value="23">23</option>
+                                                            <option value="24">24</option>
+                                                            <option value="25">25</option>
+                                                            <option value="26">26</option>
+                                                            <option value="27">27</option>
+                                                            <option value="28">28</option>
+                                                            <option value="29">29</option>
+                                                            <option value="30">30</option>
+                                                            <option value="31">31</option>
+                                                        </select>
+                                                    <img src="app/img2/extras/drop_down.svg" style="position: absolute; bottom: 340px; right: 275px">
 
-                                                <select id="date" name="date">
-                                                    <option selected>DD</option>
-                                                    <option value="01">1</option>
-                                                    <option value="02">2</option>
-                                                    <option value="03">3</option>
-                                                    <option value="04">4</option>
-                                                    <option value="05">5</option>
-                                                    <option value="06">6</option>
-                                                    <option value="07">7</option>
-                                                    <option value="08">8</option>
-                                                    <option value="09">9</option>
-                                                    <option value="10">10</option>
-                                                    <option value="11">11</option>
-                                                    <option value="12">12</option>
-                                                    <option value="13">13</option>
-                                                    <option value="14">14</option>
-                                                    <option value="15">15</option>
-                                                    <option value="16">16</option>
-                                                    <option value="17">17</option>
-                                                    <option value="18">18</option>
-                                                    <option value="19">19</option>
-                                                    <option value="20">20</option>
-                                                    <option value="21">21</option>
-                                                    <option value="22">22</option>
-                                                    <option value="23">23</option>
-                                                    <option value="24">24</option>
-                                                    <option value="25">25</option>
-                                                    <option value="26">26</option>
-                                                    <option value="27">27</option>
-                                                    <option value="28">28</option>
-                                                    <option value="29">29</option>
-                                                    <option value="30">30</option>
-                                                    <option value="31">31</option>
-                                                </select>
+                                                        <select id="month" name="month" style="margin-right: 10px">
+                                                            <option selected>MM</option>
+                                                            <option value="01">1</option>
+                                                            <option value="02">2</option>
+                                                            <option value="03">3</option>
+                                                            <option value="04">4</option>
+                                                            <option value="05">5</option>
+                                                            <option value="06">6</option>
+                                                            <option value="07">7</option>
+                                                            <option value="08">8</option>
+                                                            <option value="09">9</option>
+                                                            <option value="10">10</option>
+                                                            <option value="11">11</option>
+                                                            <option value="12">12</option>
+                                                        </select>
+                                                    <img src="app/img2/extras/drop_down.svg" style="position: absolute; bottom: 340px; right: 145px">
 
-                                                <select id="month" name="month">
-                                                    <option selected>MM</option>
-                                                    <option value="01">1</option>
-                                                    <option value="02">2</option>
-                                                    <option value="03">3</option>
-                                                    <option value="04">4</option>
-                                                    <option value="05">5</option>
-                                                    <option value="06">6</option>
-                                                    <option value="07">7</option>
-                                                    <option value="08">8</option>
-                                                    <option value="09">9</option>
-                                                    <option value="10">10</option>
-                                                    <option value="11">11</option>
-                                                    <option value="12">12</option>
-                                                </select>
-
-                                                <select id="year" name="year">
-                                                    <option selected>YYYY</option>
-                                                    <option value="2004">2004</option>
-                                                    <option value="2003">2003</option>
-                                                    <option value="2002">2002</option>
-                                                    <option value="2001">2001</option>
-                                                    <option value="2000">2000</option>
-                                                    <option value="1999">1999</option>
-                                                    <option value="1998">1998</option>
-                                                    <option value="1997">1997</option>
-                                                    <option value="1996">1996</option>
-                                                    <option value="1995">1995</option>
-                                                    <option value="1994">1994</option>
-                                                    <option value="1993">1993</option>
-                                                    <option value="1992">1992</option>
-                                                    <option value="1991">1991</option>
-                                                    <option value="1990">1990</option>
-                                                    <option value="1989">1989</option>
-                                                    <option value="1988">1988</option>
-                                                    <option value="1987">1987</option>
-                                                    <option value="1986">1986</option>
-                                                    <option value="1985">1985</option>
-                                                    <option value="1984">1984</option>
-                                                    <option value="1983">1983</option>
-                                                    <option value="1982">1982</option>
-                                                    <option value="1981">1981</option>
-                                                    <option value="1980">1980</option>
-                                                    <option value="1979">1979</option>
-                                                    <option value="1978">1978</option>
-                                                    <option value="1977">1977</option>
-                                                    <option value="1976">1976</option>
-                                                    <option value="1975">1975</option>
-                                                    <option value="1974">1974</option>
-                                                    <option value="1973">1973</option>
-                                                    <option value="1972">1972</option>
-                                                    <option value="1971">1971</option>
-                                                    <option value="1970">1970</option>
-                                                    <option value="1969">1969</option>
-                                                    <option value="1968">1968</option>
-                                                    <option value="1967">1967</option>
-                                                    <option value="1966">1966</option>
-                                                    <option value="1965">1965</option>
-                                                    <option value="1964">1964</option>
-                                                    <option value="1963">1963</option>
-                                                    <option value="1962">1962</option>
-                                                    <option value="1961">1961</option>
-                                                    <option value="1960">1960</option>
-                                                    <option value="1959">1959</option>
-                                                    <option value="1958">1958</option>
-                                                    <option value="1957">1957</option>
-                                                    <option value="1956">1956</option>
-                                                    <option value="1955">1955</option>
-                                                    <option value="1954">1954</option>
-                                                    <option value="1953">1953</option>
-                                                    <option value="1952">1952</option>
-                                                    <option value="1951">1951</option>
-                                                    <option value="1950">1950</option>
-                                                    <option value="1949">1949</option>
-                                                    <option value="1948">1948</option>
-                                                    <option value="1947">1947</option>
-                                                    <option value="1946">1946</option>
-                                                    <option value="1945">1945</option>
-                                                    <option value="1944">1944</option>
-                                                    <option value="1943">1943</option>
-                                                    <option value="1942">1942</option>
-                                                    <option value="1941">1941</option>
-                                                    <option value="1940">1940</option>
-                                                    <option value="1939">1939</option>
-                                                    <option value="1938">1938</option>
-                                                    <option value="1937">1937</option>
-                                                    <option value="1936">1936</option>
-                                                    <option value="1935">1935</option>
-                                                    <option value="1934">1934</option>
-                                                    <option value="1933">1933</option>
-                                                    <option value="1932">1932</option>
-                                                    <option value="1931">1931</option>
-                                                    <option value="1930">1930</option>
-                                                    <option value="1929">1929</option>
-                                                    <option value="1928">1928</option>
-                                                    <option value="1927">1927</option>
-                                                    <option value="1926">1926</option>
-                                                    <option value="1925">1925</option>
-                                                    <option value="1924">1924</option>
-                                                    <option value="1923">1923</option>
-                                                    <option value="1922">1922</option>
-                                                    <option value="1921">1921</option>
-                                                    <option value="1920">1920</option>
-                                                    <option value="1919">1919</option>
-                                                    <option value="1918">1918</option>
-                                                    <option value="1917">1917</option>
-                                                    <option value="1916">1916</option>
-                                                    <option value="1915">1915</option>
-                                                    <option value="1914">1914</option>
-                                                    <option value="1913">1913</option>
-                                                    <option value="1912">1912</option>
-                                                    <option value="1911">1911</option>
-                                                    <option value="1910">1910</option>
-                                                    <option value="1909">1909</option>
-                                                    <option value="1908">1908</option>
-                                                    <option value="1907">1907</option>
-                                                    <option value="1906">1906</option>
-                                                    <option value="1905">1905</option>
-                                                    <option value="1904">1904</option>
-                                                    <option value="1903">1903</option>
-                                                    <option value="1902">1902</option>
-                                                    <option value="1901">1901</option>
-                                                    <option value="1900">1900</option>
-                                                </select>
+                                                        <select id="year" name="year">
+                                                            <option selected>YYYY</option>
+                                                            <option value="2004">2004</option>
+                                                            <option value="2003">2003</option>
+                                                            <option value="2002">2002</option>
+                                                            <option value="2001">2001</option>
+                                                            <option value="2000">2000</option>
+                                                            <option value="1999">1999</option>
+                                                            <option value="1998">1998</option>
+                                                            <option value="1997">1997</option>
+                                                            <option value="1996">1996</option>
+                                                            <option value="1995">1995</option>
+                                                            <option value="1994">1994</option>
+                                                            <option value="1993">1993</option>
+                                                            <option value="1992">1992</option>
+                                                            <option value="1991">1991</option>
+                                                            <option value="1990">1990</option>
+                                                            <option value="1989">1989</option>
+                                                            <option value="1988">1988</option>
+                                                            <option value="1987">1987</option>
+                                                            <option value="1986">1986</option>
+                                                            <option value="1985">1985</option>
+                                                            <option value="1984">1984</option>
+                                                            <option value="1983">1983</option>
+                                                            <option value="1982">1982</option>
+                                                            <option value="1981">1981</option>
+                                                            <option value="1980">1980</option>
+                                                            <option value="1979">1979</option>
+                                                            <option value="1978">1978</option>
+                                                            <option value="1977">1977</option>
+                                                            <option value="1976">1976</option>
+                                                            <option value="1975">1975</option>
+                                                            <option value="1974">1974</option>
+                                                            <option value="1973">1973</option>
+                                                            <option value="1972">1972</option>
+                                                            <option value="1971">1971</option>
+                                                            <option value="1970">1970</option>
+                                                            <option value="1969">1969</option>
+                                                            <option value="1968">1968</option>
+                                                            <option value="1967">1967</option>
+                                                            <option value="1966">1966</option>
+                                                            <option value="1965">1965</option>
+                                                            <option value="1964">1964</option>
+                                                            <option value="1963">1963</option>
+                                                            <option value="1962">1962</option>
+                                                            <option value="1961">1961</option>
+                                                            <option value="1960">1960</option>
+                                                            <option value="1959">1959</option>
+                                                            <option value="1958">1958</option>
+                                                            <option value="1957">1957</option>
+                                                            <option value="1956">1956</option>
+                                                            <option value="1955">1955</option>
+                                                            <option value="1954">1954</option>
+                                                            <option value="1953">1953</option>
+                                                            <option value="1952">1952</option>
+                                                            <option value="1951">1951</option>
+                                                            <option value="1950">1950</option>
+                                                            <option value="1949">1949</option>
+                                                            <option value="1948">1948</option>
+                                                            <option value="1947">1947</option>
+                                                            <option value="1946">1946</option>
+                                                            <option value="1945">1945</option>
+                                                            <option value="1944">1944</option>
+                                                            <option value="1943">1943</option>
+                                                            <option value="1942">1942</option>
+                                                            <option value="1941">1941</option>
+                                                            <option value="1940">1940</option>
+                                                            <option value="1939">1939</option>
+                                                            <option value="1938">1938</option>
+                                                            <option value="1937">1937</option>
+                                                            <option value="1936">1936</option>
+                                                            <option value="1935">1935</option>
+                                                            <option value="1934">1934</option>
+                                                            <option value="1933">1933</option>
+                                                            <option value="1932">1932</option>
+                                                            <option value="1931">1931</option>
+                                                            <option value="1930">1930</option>
+                                                            <option value="1929">1929</option>
+                                                            <option value="1928">1928</option>
+                                                            <option value="1927">1927</option>
+                                                            <option value="1926">1926</option>
+                                                            <option value="1925">1925</option>
+                                                            <option value="1924">1924</option>
+                                                            <option value="1923">1923</option>
+                                                            <option value="1922">1922</option>
+                                                            <option value="1921">1921</option>
+                                                            <option value="1920">1920</option>
+                                                            <option value="1919">1919</option>
+                                                            <option value="1918">1918</option>
+                                                            <option value="1917">1917</option>
+                                                            <option value="1916">1916</option>
+                                                            <option value="1915">1915</option>
+                                                            <option value="1914">1914</option>
+                                                            <option value="1913">1913</option>
+                                                            <option value="1912">1912</option>
+                                                            <option value="1911">1911</option>
+                                                            <option value="1910">1910</option>
+                                                            <option value="1909">1909</option>
+                                                            <option value="1908">1908</option>
+                                                            <option value="1907">1907</option>
+                                                            <option value="1906">1906</option>
+                                                            <option value="1905">1905</option>
+                                                            <option value="1904">1904</option>
+                                                            <option value="1903">1903</option>
+                                                            <option value="1902">1902</option>
+                                                            <option value="1901">1901</option>
+                                                            <option value="1900">1900</option>
+                                                        </select>
+                                                        <img src="app/img2/extras/drop_down.svg" style="position: absolute; bottom: 340px; right: 15px">
+                                                </div>
 
                                                 <!-- ngInclude: 'app/sections/landing-partials/register-fields/country.html' -->
                                                 <div class="left ng-scope"
@@ -1801,20 +1832,13 @@
                                                         <div ng-messages="vm.getRegisterForm().password.$error"
                                                              ng-show="vm.getRegisterForm().password.$touched || vm.isRegisterAttempted || vm.fieldsGoNextAttempted['password']"
                                                              class="ng-active ng-hide">
-                                                            <!-- ngMessage: required -->
-                                                            <div ng-message="required"
-                                                                 class="validation-error-label ng-binding ng-scope">
-                                                                <span>*</span>Voer een land in.
-                                                            </div>
-                                                            <!-- ngMessage: minlength -->
                                                         </div>
                                                         <!-- ngIf: !vm.landingFormsNoLabels -->
                                                         <!-- ngIf: !!vm.landingFormsIcons -->
                                                         <input type="text"
                                                                class="form-control empty floating-label ng-pristine ng-untouched ng-invalid ng-invalid-required ng-valid-minlength"
                                                                name="country"
-                                                               placeholder="Country" autocomplete="off"
-                                                               style="background-image: url(&quot;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAkCAYAAADo6zjiAAAAAXNSR0IArs4c6QAAAbNJREFUWAntV8FqwkAQnaymUkpChB7tKSfxWCie/Yb+gbdeCqGf0YsQ+hU95QNyDoWCF/HkqdeiIaEUqyZ1ArvodrOHxanQOiCzO28y781skKwFW3scPV1/febP69XqarNeNTB2KGs07U3Ttt/Ozp3bh/u7V7muheQf6ftLUWyYDB5yz1ijuPAub2QRDDunJsdGkAO55KYYjl0OUu1VXOzQZ64Tr+IiPXedGI79bQHdbheCIAD0dUY6gV6vB67rAvo6IxVgWVbFy71KBKkAFaEc2xPQarXA931ot9tyHphiPwpJgSbfe54Hw+EQHMfZ/msVEEURjMfjCjbFeG2dFxPo9/sVOSYzxmAwGIjnTDFRQLMQAjQ5pJAQkCQJ5HlekeERxHEsiE0xUUCzEO9AmqYQhiF0Oh2Yz+ewWCzEY6aYKKBZCAGYs1wuYTabKdNNMWWxnaA4gp3Yry5JBZRlWTXDvaozUgGTyQSyLAP0dbb3DtQlmcan0yngT2ekE9ARc+z4AvC7nauh9iouhpcGamJeX8XF8MaClwaeROWRA7nk+tUnyzGvZrKg0/40gdME/t8EvgG0/NOS6v9NHQAAAABJRU5ErkJggg==&quot;); background-repeat: no-repeat; background-attachment: scroll; background-size: 16px 18px; background-position: 98% 50%; cursor: auto;">
+                                                               placeholder="Country" autocomplete="off">
                                                     </div>
                                                 </div>
                                                 <!-- ngInclude: 'app/sections/landing-partials/register-fields/city.html' -->
@@ -1825,20 +1849,13 @@
                                                         <div ng-messages="vm.getRegisterForm().password.$error"
                                                              ng-show="vm.getRegisterForm().password.$touched || vm.isRegisterAttempted || vm.fieldsGoNextAttempted['password']"
                                                              class="ng-active ng-hide">
-                                                            <!-- ngMessage: required -->
-                                                            <div ng-message="required"
-                                                                 class="validation-error-label ng-binding ng-scope">
-                                                                <span>*</span>Voer een Stad in.
-                                                            </div>
-                                                            <!-- ngMessage: minlength -->
                                                         </div>
                                                         <!-- ngIf: !vm.landingFormsNoLabels -->
                                                         <!-- ngIf: !!vm.landingFormsIcons -->
                                                         <input type="text"
                                                                class="form-control empty floating-label ng-pristine ng-untouched ng-invalid ng-invalid-required ng-valid-minlength"
                                                                name="city"
-                                                               placeholder="City"
-                                                               style="background-image: url(&quot;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAkCAYAAADo6zjiAAAAAXNSR0IArs4c6QAAAbNJREFUWAntV8FqwkAQnaymUkpChB7tKSfxWCie/Yb+gbdeCqGf0YsQ+hU95QNyDoWCF/HkqdeiIaEUqyZ1ArvodrOHxanQOiCzO28y781skKwFW3scPV1/febP69XqarNeNTB2KGs07U3Ttt/Ozp3bh/u7V7muheQf6ftLUWyYDB5yz1ijuPAub2QRDDunJsdGkAO55KYYjl0OUu1VXOzQZ64Tr+IiPXedGI79bQHdbheCIAD0dUY6gV6vB67rAvo6IxVgWVbFy71KBKkAFaEc2xPQarXA931ot9tyHphiPwpJgSbfe54Hw+EQHMfZ/msVEEURjMfjCjbFeG2dFxPo9/sVOSYzxmAwGIjnTDFRQLMQAjQ5pJAQkCQJ5HlekeERxHEsiE0xUUCzEO9AmqYQhiF0Oh2Yz+ewWCzEY6aYKKBZCAGYs1wuYTabKdNNMWWxnaA4gp3Yry5JBZRlWTXDvaozUgGTyQSyLAP0dbb3DtQlmcan0yngT2ekE9ARc+z4AvC7nauh9iouhpcGamJeX8XF8MaClwaeROWRA7nk+tUnyzGvZrKg0/40gdME/t8EvgG0/NOS6v9NHQAAAABJRU5ErkJggg==&quot;); background-repeat: no-repeat; background-attachment: scroll; background-size: 16px 18px; background-position: 98% 50%; cursor: auto;">
+                                                               placeholder="City">
                                                     </div>
                                                 </div>
 
@@ -1851,14 +1868,12 @@
                                                                 <input type="checkbox" name="terms_accepted"
                                                                        class="ng-pristine ng-untouched ng-valid">
                                                                 <span dom-replace="vm.acceptPolicyHTML"><span
-                                                                            class="ng-scope">Ik accepteer de </span><a
-                                                                            href="javascript:void(0)"
+                                                                            class="ng-scope">I accept the </span><a
                                                                             ng-click="root.openStaticContent('Terms')"
-                                                                            class="ng-scope">Voorwaarden</a><span
+                                                                            class="ng-scope">terms and conditions </a><span
                                                                             class="ng-scope"> &amp; </span><a
-                                                                            href="javascript:void(0)"
                                                                             ng-click="root.openStaticContent('Privacy')"
-                                                                            class="ng-scope">Privacybeleid</a><span
+                                                                            class="ng-scope">privacy policy</a><span
                                                                             class="ng-scope">.</span></span>
                                                             </p></div>
                                                         <!-- ngInclude: 'app/sections/landing-partials/register-fields/register-btn.html' -->
@@ -1888,8 +1903,8 @@
                                      ng-include="'app/sections2/landing-teaser.html'">
                                     <div class="ng-scope">
                                         <h1 class="custom-teaser-header ng-binding">snap &amp; fuck</h1>
-                                        <p class="custom-teaser-text ng-binding">Snel en gratis Registratie</p>
-                                        <p class="custom-teaser-text ng-binding">In 3 simpele stappen</p>
+                                        <p class="custom-teaser-text ng-binding">Quick and free Registration</p>
+                                        <p class="custom-teaser-text ng-binding">In 3 simple steps</p>
                                     </div>
                                     <div class="ng-scope"></div>
                                 </div>
@@ -1905,15 +1920,15 @@
                     <div class="second-container">
                         <div class="content">
                             <div class="left">
-                                <h1 ng-bind-html="'additional.about_us' | locale" class="ng-binding">Over ons</h1>
+                                <h1 ng-bind-html="'additional.about_us' | locale" class="ng-binding">About us</h1>
                                 <p ng-bind-html="'additional.new_chat_dating' | locale" class="ng-binding"><span>Snap-bang.com</span>
-                                    is een nieuwe chat en datingsite met de snelst groeiende online gemeenschap van
-                                    gebruikers die plezier willen hebben. Zoek jij een langdurige relatie of gewoon een
-                                    kort avontuur? <span>Snap-bang.com</span> is de perfecte plaats om snel een match te
-                                    vinden.</p>
+                                    is a new chat and dating site with the fastest growing online community in
+                                    users who want to have fun. Are you looking for a long term relationship or just a
+                                    short adventure? <span>Snap-bang.com</span> is the perfect place to quickly find a match
+                                    find.</p>
                                 <p class="second-bold ng-binding" ng-bind-html="'additional.join_platform' | locale">
-                                    Word vandaag nog gratis lid van ons platform!</p>
-                                <button class="custom-second-btn ng-binding">Word nu lid</button>
+                                    Join our platform for free today!</p>
+                                <button class="custom-second-btn ng-binding" style="@media only screen and (max-width: 340px){width: 100%}">Become a member now</button>
                             </div>
                             <div class="right">
                                 <div>
@@ -1934,8 +1949,8 @@
                             </div>
                             <div class="right">
                                 <h1 ng-bind-html="'additional.roulette' | locale" class="ng-binding">Roulette</h1>
-                                <p class="ng-binding">Met onze Roulette optie kun je meteen je partner vinden.
-                                    Registreer gratis en bekijk de singles bij jouw in de buurt.</p>
+                                <p class="ng-binding">With our Roulette option you can immediately find your partner.
+                                    Register for free and view the singles near you.</p>
                             </div>
                         </div>
                         <img class="custom-wave-2" src="app/img2/extras/colourful_wave2.svg">
@@ -1946,11 +1961,11 @@
                             <div class="left">
                                 <h1 ng-bind-html="'additional.instant_match' | locale" class="ng-binding">Instant Match
                                     Ups</h1>
-                                <p ng-bind-html="'additional.perfect_match' | locale" class="ng-binding">Vind direct
-                                    jouw perfecte match dankzij de personaliseringsfuncties van
-                                    <span>Snap-bang.com</span>. Hoe meer informatie je op je profiel invult, hoe meer
-                                    kans je hebt om gelijkgestemden te ontmoeten.</p>
-                                <button class="go-to-register ng-binding">Registreer nu</button>
+                                <p ng-bind-html="'additional.perfect_match' | locale" class="ng-binding">Find instantly
+                                    your perfect match thanks to the customization features of
+                                    <span>Snap-bang.com</span>. The more information you enter on your profile, the more
+                                    chance you have to meet like-minded people</p>
+                                <button class="go-to-register ng-binding">Register now</button>
                             </div>
                             <div class="right">
                                 <div>
@@ -1976,14 +1991,14 @@
                                     <hr>
                                 </div>
                                 <div class="custom-row-2">
-                                    <h1 class="ng-binding">Je kan op ons vertrouwen</h1>
+                                    <h1 class="ng-binding">You can rely on us</h1>
                                 </div>
                                 <div class="custom-row-3">
-                                    <p class="ng-binding">Wij willen dat Snap-bang.com een verilige en leuke dating site
-                                        is waar je singles kan ontmoeten in jouw omgeving. De veiligheid en bescherming
-                                        van je persoonlijke data is onze hoogste prioriteit. Wiij analyseren elke
-                                        profiel foto en beschrijving op ons platform om er voor te zorgen dat alles
-                                        klopt met onze voorwaarden.</p>
+                                    <p class="ng-binding">We want Snap-bang.com to be a safe and fun dating site
+                                        it's where you can meet singles in your area. The safety and protection
+                                        of your personal data is our highest priority. We analyze every
+                                        profile picture and description on our platform to make sure everything
+                                        matches our conditions.</p>
                                 </div>
                                 <div class="custom-row-4">
                                     <p>No1 IN REVIEW SITES</p>
@@ -1992,7 +2007,7 @@
                                     <img class="custom-rate" src="app/img2/extras/rate_desktop.png">
                                     <img class="custom-rate-mobile" src="app/img2/extras/rate_mobile.png">
                                 </div>
-                                <button class="custom-second-btn2 ng-binding">Registreren</button>
+                                <button class="custom-second-btn2 ng-binding">Register</button>
                             </div>
                         </div>
                         <img class="custom-wave-4" src="app/img2/extras/wave_footer.svg">
@@ -2004,12 +2019,10 @@
                                 <div class="center">
                                     <a href="#/affiliate" ui-sref="affiliate" class="ng-binding">Affiliate</a>
                                     <a href="javascript:void(0)" ng-click="root.openStaticContent('Terms')"
-                                       rel="nofollow" class="ng-binding">Voorwaarden</a>
+                                       rel="nofollow" class="ng-binding">Requirements</a>
                                     <a href="javascript:void(0)" ng-click="root.openStaticContent('Privacy')"
                                        rel="nofollow" class="ng-binding">Privacy &amp; Cookies</a>
                                     <!-- <a ng-if="root.contactInformationShowInContact" href="javascript:void(0)" ng-click="root.onContactUsClick()" rel="nofollow">{{::'staticTitles.footerTitleContactUs' | locale}}</a> -->
-                                    <a href="javascript:void(0)" ng-click="root.onContactUsClick()" rel="nofollow"
-                                       class="ng-binding">Contact Ons</a>
                                     <a href="javascript:void(0)" ng-click="root.showFaq()" rel="nofollow"
                                        class="ng-binding">Help</a>
                                 </div>
