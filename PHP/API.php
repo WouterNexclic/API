@@ -13,47 +13,78 @@ $Country = $_POST['country'];
 $City = $_POST['city'];
 $Terms_accepted = $_POST['terms_accepted'];
 
-$str = $Date . "/" . $Month . "/" . $Year;
-
-$Birthday_time = strtotime($str);
-
-$Birthday = date('Y-m-d',$Birthday_time);
-
-if (isset($Username)) {
-    if(empty($Username)){
-        $msg_name = "You must supply your name";
-        header("location: ../index.php?msg=$msg_name");}
-    $name_subject = $Username;
-    $name_pattern = '/^[a-zA-Z1-9 ]*$/';
-    preg_match($name_pattern, $name_subject, $name_matches);
-    if(!$name_matches[0]){
-        $msg_name = "Only alphabets and white space allowed";
-        header("location: ../index.php?msg=$msg_name");
-    }
-}
-
-$email_subject = $Email;
-$email_pattern = '/[A-Za-z1-9]*[@]{1}[A-Za-z1-9]*[.]{1}[a-z]*$/';
-preg_match($email_pattern, $email_subject, $email_matches);
-if(!$email_matches[0]){
-    $msg_name = "oops something went wrong";
-    header("location: ../index.php?msg=$msg_name");
-}
-
-if(isset($Terms_accepted) &&
-    $Terms_accepted == 'Yes')
-{
+if(isset($Terms_accepted) && $Terms_accepted == 'Yes') {
     $Terms_accepted = 1;
 }
 else
 {
-    $Terms_accepted = 0;
+    $msg = "You need to accept the terms and conditions & privacy policy";
+    header("location: ../index.php?msg=$msg");
+    exit;
+}
+
+if(isset($Date) && $Date != 'Yes' &&  isset($Month) && $Month != 'Yes' &&  isset($Year) && $Year != 'Yes') {
+    $str = $Date . "/" . $Month . "/" . $Year;
+
+    $Birthday_time = strtotime($str);
+
+    $Birthday = date('Y-m-d',$Birthday_time);
+}
+else
+{
+    $msg = "You need to put in your birthday";
+    header("location: ../index.php?msg=$msg");
+    exit;
+}
+
+if (isset($Username)  OR empty($Username)) {
+    if(empty($Username)){
+        $msg = "You must supply your name";
+        header("location: ../index.php?msg=$msg");
+        exit;}
+    $name_subject = $Username;
+    $name_pattern = '/^[a-zA-Z ]+$/';
+    preg_match($name_pattern, $name_subject, $name_matches);
+    if(!$name_matches[0]){
+        $msg = "Only alphabets and space are allowed";
+        header("location: ../index.php?msg=$msg");
+        exit;
+    }
+}
+
+if (isset($Country) OR empty($Country)) {
+    if(empty($Country)){
+        $msg = "You must fill the country in";
+        header("location: ../index.php?msg=$msg");
+        exit;}
+    $name_subject = $Country;
+    $name_pattern = '/^[a-zA-Z ]+$/';
+    preg_match($name_pattern, $name_subject, $name_matches);
+    if(!$name_matches[0]){
+        $msg = "Only alphabets and white space allowed";
+        header("location: ../index.php?msg=$msg");
+        exit;
+    }
+}
+
+if (isset($City) OR empty($City)) {
+    if(empty($City)){
+        $msg = "You must fill the city in";
+        header("location: ../index.php?msg=$msg");
+        exit;}
+    $name_subject = $City;
+    $name_pattern = '/^[a-zA-Z ]+$/';
+    preg_match($name_pattern, $name_subject, $name_matches);
+    if(!$name_matches[0]){
+        $msg = "Only alphabets and white space allowed";
+        header("location: ../index.php?msg=$msg");
+        exit;
+    }
 }
 
 require_once 'conn.php';
 
-
-$table = "CREATE TABLE IF NOT EXISTS snap_bang.users (Id int NOT NULL AUTO_INCREMENT, Gender varchar(255), Looking_for varchar(255), Username varchar(255), Email varchar(255), Password varchar(255), Birthday date, Country varchar(255), City varchar(255), Terms_accepted tinyint(1),PRIMARY KEY (Id))";
+$table = "CREATE TABLE IF NOT EXISTS $dbName.users (Id int NOT NULL AUTO_INCREMENT, Gender varchar(255), Looking_for varchar(255), Username varchar(255), Email varchar(255), Password varchar(255), Birthday date, Country varchar(255), City varchar(255), Terms_accepted tinyint(1),PRIMARY KEY (Id))";
 
 $table_statement = $conn->prepare($table);
 
@@ -79,6 +110,6 @@ $statement->execute([
     ":Terms_accepted" => $Terms_accepted
 ]);
 
-header("location: ../index.php?msg=Melding opgeslagen nd");
+header("location: ../index.php?msg=Registering successful");
 
 ?>
