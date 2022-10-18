@@ -1,6 +1,9 @@
 <?php
 
-
+$Api_key = "some_api_key";
+$Start_date= date('d-m-y');
+$End_date= date('d-m-y');
+$Format = "json";
 $Gender = $_POST['gender'];
 $Looking_for = $_POST['looking_for'];
 $Username = $_POST['username'];
@@ -110,6 +113,6 @@ $statement->execute([
     ":Terms_accepted" => $Terms_accepted
 ]);
 
-header("location: ../index.php?msg=Registering successful");
+header("location: ../index.php?start_date=$Start_date&end_date=$End_date&api_key=$Api_key&format=$Format&fields=id,date,type,cost,status,confirms,site,currency,commissions,campaign");
 
 ?>
