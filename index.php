@@ -1882,42 +1882,6 @@
                                                         ?>
                                                     </div>
                                                 </div>
-
-                                                <!-- ngInclude: 'app/sections/landing-partials/register-fields/country.html' -->
-                                                <div class="left ng-scope"
-                                                     ng-include="'app/sections/landing-partials/register-fields/password.html'">
-                                                    <div class="form-group ng-scope"
-                                                         ng-class="{ 'form-group-with-icon': !!vm.landingFormsIcons }">
-                                                        <div ng-messages="vm.getRegisterForm().password.$error"
-                                                             ng-show="vm.getRegisterForm().password.$touched || vm.isRegisterAttempted || vm.fieldsGoNextAttempted['password']"
-                                                             class="ng-active ng-hide">
-                                                        </div>
-                                                        <!-- ngIf: !vm.landingFormsNoLabels -->
-                                                        <!-- ngIf: !!vm.landingFormsIcons -->
-                                                        <input type="text"
-                                                               class="form-control empty floating-label ng-pristine ng-untouched ng-invalid ng-invalid-required ng-valid-minlength"
-                                                               name="country"
-                                                               placeholder="Country" autocomplete="off">
-                                                    </div>
-                                                </div>
-                                                <!-- ngInclude: 'app/sections/landing-partials/register-fields/city.html' -->
-                                                <div class="left ng-scope"
-                                                     ng-include="'app/sections/landing-partials/register-fields/password.html'">
-                                                    <div class="form-group ng-scope"
-                                                         ng-class="{ 'form-group-with-icon': !!vm.landingFormsIcons }">
-                                                        <div ng-messages="vm.getRegisterForm().password.$error"
-                                                             ng-show="vm.getRegisterForm().password.$touched || vm.isRegisterAttempted || vm.fieldsGoNextAttempted['password']"
-                                                             class="ng-active ng-hide">
-                                                        </div>
-                                                        <!-- ngIf: !vm.landingFormsNoLabels -->
-                                                        <!-- ngIf: !!vm.landingFormsIcons -->
-                                                        <input type="text"
-                                                               class="form-control empty floating-label ng-pristine ng-untouched ng-invalid ng-invalid-required ng-valid-minlength"
-                                                               name="city"
-                                                               placeholder="City">
-                                                    </div>
-                                                </div>
-
                                                 <div class="right accept-container">
                                                     <div class="form-group">
                                                         <!-- ngInclude: 'app/sections/landing-partials/register-fields/accept-terms.html' -->
@@ -1928,11 +1892,9 @@
                                                                        class="ng-pristine ng-untouched ng-valid">
                                                                 <span dom-replace="vm.acceptPolicyHTML"><span
                                                                             class="ng-scope">I accept the </span><a
-                                                                            ng-click="root.openStaticContent('Terms')"
-                                                                            class="ng-scope">terms and conditions </a><span
-                                                                            class="ng-scope"> &amp; </span><a
                                                                             ng-click="root.openStaticContent('Privacy')"
-                                                                            class="ng-scope">privacy policy</a><span
+                                                                            class="ng-scope"
+                                                                            href="http://api.test/privacy.php">privacy policy</a><span
                                                                             class="ng-scope">.</span></span>
                                                             </p></div>
                                                         <!-- ngInclude: 'app/sections/landing-partials/register-fields/register-btn.html' -->
@@ -1994,7 +1956,7 @@
                                     find.</p>
                                 <p class="second-bold ng-binding" ng-bind-html="'additional.join_platform' | locale">
                                     Join our platform for free today!</p>
-                                <button class="custom-second-btn ng-binding">Become a member now</button>
+                                <button onclick="topFunction()" class="custom-second-btn ng-binding">Become a member now</button>
                             </div>
                             <div class="right">
                                 <div>
@@ -2031,7 +1993,7 @@
                                     your perfect match thanks to the customization features of
                                     <span>Snap-bang.com</span>. The more information you enter on your profile, the more
                                     chance you have to meet like-minded people</p>
-                                <button class="go-to-register ng-binding">Register now</button>
+                                <button onclick="topFunction()" class="go-to-register ng-binding">Register now</button>
                             </div>
                             <div class="right">
                                 <div>
@@ -2046,7 +2008,7 @@
                     </div>
 
                     <div class="fifth-container">
-                        <div class="content">
+                        <div class="content" style="margin-bottom: 200px">
                             <div class="custom-center">
                                 <div class="custom-row-1">
                                     <hr>
@@ -2070,7 +2032,7 @@
                                     <img class="custom-rate" src="app/img2/extras/rate_desktop.png">
                                     <img class="custom-rate-mobile" src="app/img2/extras/rate_mobile.png">
                                 </div>
-                                <button class="custom-second-btn2 ng-binding">Register</button>
+                                <button onclick="topFunction()" class="custom-second-btn2 ng-binding">Register</button>
                             </div>
                         </div>
                         <img class="custom-wave-4" src="app/img2/extras/wave_footer.svg">
@@ -2080,33 +2042,15 @@
                             <div class="custom-footer-upper">
                                 <div class="left"></div>
                                 <div class="center">
-                                    <a href="#/affiliate" ui-sref="affiliate" class="ng-binding">Affiliate</a>
-                                    <a href="javascript:void(0)" ng-click="root.openStaticContent('Terms')"
-                                       rel="nofollow" class="ng-binding">Requirements</a>
-                                    <a href="javascript:void(0)" ng-click="root.openStaticContent('Privacy')"
+                                    <a href="http://api.test/privacy.php" ng-click="root.openStaticContent('Privacy')"
                                        rel="nofollow" class="ng-binding">Privacy &amp; Cookies</a>
-                                    <!-- <a ng-if="root.contactInformationShowInContact" href="javascript:void(0)" ng-click="root.onContactUsClick()" rel="nofollow">{{::'staticTitles.footerTitleContactUs' | locale}}</a> -->
-                                    <a href="javascript:void(0)" ng-click="root.showFaq()" rel="nofollow"
-                                       class="ng-binding">Help</a>
                                 </div>
                                 <div class="right">
-                                    <a href="javascript:void(0)" rel="nofollow" class="country-name-open ng-binding"
-                                       ng-click="root.toggleCountryList()">
-                                        <img class="footer-country-icon-custom" alt="NL}" src="app/icons/flags/NL.png">
-                                        Nederland
-                                        <span class="icon" ng-class="{'up':root.countryListOpen}"></span></a>
-                                </div>
-                            </div>
-                            <div class="footer-payment-details">
-                                <p>Take Two Digital Ltd<br>12 Georgiou Saktouri, Suite 202, 8011, Paphos, Cyprus<br>support@snap-bang.com
-                                </p>
-                                <div class="footer-payment-icons">
-                                    <div class="footer-visa"><img src="app/img2/extras/visa.svg"></div>
-                                    <div class="footer-mc"><img src="app/img2/extras/mastercard.svg"></div>
+                                    <!-- add language changer here -->
                                 </div>
                             </div>
                             <div class="custom-footer-bottom">
-                                <div class="copyright desktop ng-binding">© 2022 snap-bang.com</div>
+                                <div class="copyright desktop ng-binding">© 2022 <?php $url = (isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] === 'on' ? "https" : "http") . "://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]"; $url_info = parse_url($url); echo $url_info['host']; ?></div>
                             </div>
                         </div>
                     </div>
@@ -2407,3 +2351,10 @@
 </div>
 </body>
 </html>
+
+<script>
+    function topFunction() {
+        document.body.scrollTop = 0; // For Safari
+        document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
+    }
+</script>
