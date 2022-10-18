@@ -27,9 +27,17 @@ if (isset($Username)) {
     $name_pattern = '/^[a-zA-Z1-9 ]*$/';
     preg_match($name_pattern, $name_subject, $name_matches);
     if(!$name_matches[0]){
-        $msg2_name = "Only alphabets and white space allowed";
+        $msg_name = "Only alphabets and white space allowed";
         header("location: ../index.php?msg=$msg_name");
     }
+}
+
+$email_subject = $Email;
+$email_pattern = '/[A-Za-z1-9]*[@]{1}[A-Za-z1-9]*[.]{1}[a-z]*$/';
+preg_match($email_pattern, $email_subject, $email_matches);
+if(!$email_matches[0]){
+    $msg_name = "oops something went wrong";
+    header("location: ../index.php?msg=$msg_name");
 }
 
 if(isset($Terms_accepted) &&
