@@ -35,7 +35,6 @@
     <link rel="icon" type="image/png" sizes="57x57" href="app/icons/57x57.png">
 
     <link rel="stylesheet" href="app/css/bundle.min.css">
-    <link rel="style" href="app/css/style.css">
 
     <script type="text/javascript" async=""
             src="https://www.gstatic.com/recaptcha/releases/vP4jQKq0YJFzU6e21-BGy3GP/recaptcha__nl.js"
@@ -2050,7 +2049,7 @@
                                 </div>
                             </div>
                             <div class="custom-footer-bottom">
-                                <div class="copyright desktop ng-binding">© 2022 <?php $url = (isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] === 'on' ? "https" : "http") . "://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]"; $url_info = parse_url($url); echo $url_info['host']; ?></div>
+                                <div style="width: 1175px;" class="copyright desktop ng-binding">© 2022 <?php $url = (isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] === 'on' ? "https" : "http") . "://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]"; $url_info = parse_url($url); echo $url_info['host']; ?></div>
                             </div>
                         </div>
                     </div>
