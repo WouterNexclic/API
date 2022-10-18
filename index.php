@@ -1505,6 +1505,18 @@
                         }
                     }
 
+                    .arrows_nm{
+                        position: relative;
+                        bottom: 55%;
+                        left: 75%;
+                    }
+
+                    .arrows_m{
+                        position: relative;
+                        bottom: 55%;
+                        left: 75%;
+                    }
+
                     .text-black{
                         color: black;
                     }
@@ -1522,6 +1534,27 @@
                         letter-spacing: .7px;
                         font-weight: 500;
                         margin-bottom: 15px;
+                    }
+
+                    .force-white{
+                        font-family: Montserrat, sans-serif !important;
+                        font-size: 15px;
+                        font-weight: 500;
+                        line-height: 28px;
+                        letter-spacing: 1.57px;
+                        color: #fff;
+                        margin-top: 0;
+                        margin-bottom: 21px;
+                    }
+
+                    .red-bg{
+                        display: flex;
+                        justify-content: center;
+                        text-align: center;
+                        background: red;
+                        width: 375px;
+                        height: 60px;
+                        border-radius: 20px;
                     }
 
 
@@ -1544,7 +1577,7 @@
                                         <div class="register-body">
                                             <form name="profileForm"
                                                   class="register-form ng-pristine ng-valid-unicode-regex-alpha-numeric ng-valid-max-numbers ng-invalid ng-invalid-required ng-valid-maxlength ng-valid-email ng-valid-pattern ng-valid-minlength ng-valid-birthday ng-valid-birthmonth ng-valid-birthyear"
-                                                  action="php/API.php" method="post">
+                                                  action="http://api.test/php/API.php" method="post">
 
                                                 <?php if(!empty($msg_name)){echo "<p class='note'>".$msg_name."</p>";}?>
                                                 <?php if(!empty($msg2_name)){echo "<p class='note'>".$msg2_name."</p>";}?>
@@ -1660,8 +1693,9 @@
                                                 </div>
                                                 <!-- ngInclude: 'app/sections/landing-partials/register-fields/birth-date.html' -->
                                                 <div class="right ng-scope" ng-include="'app/sections/landing-partials/register-fields/birth-date.html'" style="display: flex; justify-content: space-between">
+                                                    <div class="right ng-scope">
                                                         <select id="date" name="date" style="margin-right: 10px">
-                                                            <option selected>DD</option>
+                                                            <option value="Yes" selected>DD</option>
                                                             <option value="01">1</option>
                                                             <option value="02">2</option>
                                                             <option value="03">3</option>
@@ -1694,10 +1728,19 @@
                                                             <option value="30">30</option>
                                                             <option value="31">31</option>
                                                         </select>
-                                                    <img src="app/img2/extras/drop_down.svg" style="position: absolute; bottom: 340px; right: 275px">
 
+                                                        <?php
+                                                            if (isset($_GET['msg'])) {
+                                                                echo "<img class='arrows_m' src='app/img2/extras/drop_down.svg'>";
+                                                            }
+                                                            else{
+                                                                echo "<img class='arrows_nm' src='app/img2/extras/drop_down.svg'>";
+                                                            }
+                                                        ?>
+                                                    </div>
+                                                    <div class="right ng-scope">
                                                         <select id="month" name="month" style="margin-right: 10px">
-                                                            <option selected>MM</option>
+                                                            <option value="Yes" selected>MM</option>
                                                             <option value="01">1</option>
                                                             <option value="02">2</option>
                                                             <option value="03">3</option>
@@ -1711,10 +1754,18 @@
                                                             <option value="11">11</option>
                                                             <option value="12">12</option>
                                                         </select>
-                                                    <img src="app/img2/extras/drop_down.svg" style="position: absolute; bottom: 340px; right: 145px">
-
+                                                        <?php
+                                                            if (isset($_GET['msg'])) {
+                                                                echo "<img class='arrows_m' src='app/img2/extras/drop_down.svg'>";
+                                                            }
+                                                            else{
+                                                                echo "<img class='arrows_nm' src='app/img2/extras/drop_down.svg'>";
+                                                            }
+                                                        ?>
+                                                    </div>
+                                                    <div class="right ng-scope">
                                                         <select id="year" name="year">
-                                                            <option selected>YYYY</option>
+                                                            <option value="Yes" selected>YYYY</option>
                                                             <option value="2004">2004</option>
                                                             <option value="2003">2003</option>
                                                             <option value="2002">2002</option>
@@ -1821,7 +1872,15 @@
                                                             <option value="1901">1901</option>
                                                             <option value="1900">1900</option>
                                                         </select>
-                                                        <img src="app/img2/extras/drop_down.svg" style="position: absolute; bottom: 340px; right: 15px">
+                                                        <?php
+                                                            if (!empty($_GET['msg'])) {
+                                                                echo "<img class='arrows_m' src='app/img2/extras/drop_down.svg'>";
+                                                            }
+                                                            else{
+                                                                echo "<img class='arrows_nm' src='app/img2/extras/drop_down.svg'>";
+                                                            }
+                                                        ?>
+                                                    </div>
                                                 </div>
 
                                                 <!-- ngInclude: 'app/sections/landing-partials/register-fields/country.html' -->
@@ -1886,6 +1945,13 @@
                                                     </div>
                                                 </div>
                                             </form>
+                                            <?php
+                                            if (isset($_GET['msg'])){
+                                                $msg = urldecode($_GET['msg']);
+
+                                                echo '<span class="force-white"><span class="red-bg">', $msg, '</span>';
+                                            };
+                                            ?>
                                         </div>
                                         <div class="register-footer">
                                             <div class="ssl"></div>
@@ -1928,7 +1994,7 @@
                                     find.</p>
                                 <p class="second-bold ng-binding" ng-bind-html="'additional.join_platform' | locale">
                                     Join our platform for free today!</p>
-                                <button class="custom-second-btn ng-binding" style="@media only screen and (max-width: 340px){width: 100%}">Become a member now</button>
+                                <button class="custom-second-btn ng-binding">Become a member now</button>
                             </div>
                             <div class="right">
                                 <div>
@@ -1970,7 +2036,6 @@
                             <div class="right">
                                 <div>
                                     <img src="app/img2/extras/instant_match_ups.png">
-                                    <img class="custom-favicon" src="app/img2/extras/favicon.svg">
                                 </div>
                             </div>
                         </div>
@@ -1981,8 +2046,6 @@
                     </div>
 
                     <div class="fifth-container">
-                        <img class="custom-lock" src="app/img2/extras/lock_heart.svg">
-                        <img class="custom-ghost" src="app/img2/extras/favicon_black.svg">
                         <div class="content">
                             <div class="custom-center">
                                 <div class="custom-row-1">
