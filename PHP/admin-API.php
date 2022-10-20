@@ -1,36 +1,38 @@
 <?php
-
 session_start();
-
-if (isset($_SESSION["loggedin"]) && $_SESSION["loggedin"] === true) {
-    header("location: ./admin.php?msg=already logged in");
-    exit;
-}
 
 require_once "conn.php";
 
 $Type = $_POST['type'];
-$Username = $_POST['username'];
-$Password = $_POST['password'];
-$Admin_ID = $_POST['admin-ID'];
 
 if ($Type == "login") {
 
-    $query = "SELECT id, username, password, admin-ID FROM admins WHERE username = ':username', password = ':password', admin-ID = ':admin-ID'";
+    $Username = $_POST['username'];
+    $Password = $_POST['password'];
+
+    $query = "SELECT * FROM admins WHERE username = :username";
 
     $statement = $conn->prepare($query);
 
-    if ($statement == false) {
-        die("incorrect query");
+    $statement->execute([
+        ':username' => $Username
+    ]);
+    $user=$statement->fetch(PDO::FETCH_ASSOC);
+
+    if($statement->rowCount()<1){
+        header("location: ../login.php?msg=no account");
+        exit;
+    }
+    if(!password_verify($Password,$user['password']) != true){
+        header("location: ../login.php?msg=wrong password");
+        exit;
     }
 
-    if ($statement->execute([
-        ":Username" => $Username,
-        ":password" => $Password,
-        ":admin-ID" => $Admin_ID
-    ])) {
-        mysqli_stmt_store_result($statement);
-    }
+    $_SESSION["ID"] = $user['ID'];
+    $_SESSION["username"] = $user['username'];
+    $_SESSION["verified"] = $user['verified'];
+    header("location: ../verify.php");
+    exit;
 
 } elseif ($Type == "logout") {
 
@@ -38,6 +40,6 @@ if ($Type == "login") {
 
     session_destroy();
 
-    header("location: ./admin.php?msg=your logged out");
+    header("location: ../login.php?msg=your logged out");
     exit;
 }
