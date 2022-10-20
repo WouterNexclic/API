@@ -4,24 +4,27 @@
 
 namespace Composer\Autoload;
 
-class ComposerStaticInitf91b80c6c7397ba6fb8d1126fad8bc7d
+class ComposerStaticInitdbc67a69de1f00091a8b33a157f4c2fa
 {
     public static $prefixLengthsPsr4 = array (
-        'P' => 
+        'S' => 
         array (
-            'PragmaRX\\Google2FA\\' => 19,
-            'ParagonIE\\ConstantTime\\' => 23,
+            'Sonata\\GoogleAuthenticator\\' => 27,
+        ),
+        'G' => 
+        array (
+            'Google\\Authenticator\\' => 21,
         ),
     );
 
     public static $prefixDirsPsr4 = array (
-        'PragmaRX\\Google2FA\\' => 
+        'Sonata\\GoogleAuthenticator\\' => 
         array (
-            0 => __DIR__ . '/..' . '/pragmarx/google2fa/src',
+            0 => __DIR__ . '/..' . '/sonata-project/google-authenticator/src',
         ),
-        'ParagonIE\\ConstantTime\\' => 
+        'Google\\Authenticator\\' => 
         array (
-            0 => __DIR__ . '/..' . '/paragonie/constant_time_encoding/src',
+            0 => __DIR__ . '/..' . '/sonata-project/google-authenticator/src',
         ),
     );
 
@@ -32,9 +35,9 @@ class ComposerStaticInitf91b80c6c7397ba6fb8d1126fad8bc7d
     public static function getInitializer(ClassLoader $loader)
     {
         return \Closure::bind(function () use ($loader) {
-            $loader->prefixLengthsPsr4 = ComposerStaticInitf91b80c6c7397ba6fb8d1126fad8bc7d::$prefixLengthsPsr4;
-            $loader->prefixDirsPsr4 = ComposerStaticInitf91b80c6c7397ba6fb8d1126fad8bc7d::$prefixDirsPsr4;
-            $loader->classMap = ComposerStaticInitf91b80c6c7397ba6fb8d1126fad8bc7d::$classMap;
+            $loader->prefixLengthsPsr4 = ComposerStaticInitdbc67a69de1f00091a8b33a157f4c2fa::$prefixLengthsPsr4;
+            $loader->prefixDirsPsr4 = ComposerStaticInitdbc67a69de1f00091a8b33a157f4c2fa::$prefixDirsPsr4;
+            $loader->classMap = ComposerStaticInitdbc67a69de1f00091a8b33a157f4c2fa::$classMap;
 
         }, null, ClassLoader::class);
     }

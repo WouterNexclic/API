@@ -6,7 +6,7 @@
     'aliases' => 
     array (
     ),
-    'reference' => 'c73af3be37ddd1d413a3f2ec756d84ea3384d41d',
+    'reference' => '5fc57cbee4c98c60f765a21760d3fcfa02943ba3',
     'name' => '__root__',
   ),
   'versions' => 
@@ -18,25 +18,16 @@
       'aliases' => 
       array (
       ),
-      'reference' => 'c73af3be37ddd1d413a3f2ec756d84ea3384d41d',
+      'reference' => '5fc57cbee4c98c60f765a21760d3fcfa02943ba3',
     ),
-    'paragonie/constant_time_encoding' => 
+    'sonata-project/google-authenticator' => 
     array (
-      'pretty_version' => 'v2.6.3',
-      'version' => '2.6.3.0',
+      'pretty_version' => '2.3.1',
+      'version' => '2.3.1.0',
       'aliases' => 
       array (
       ),
-      'reference' => '58c3f47f650c94ec05a151692652a868995d2938',
-    ),
-    'pragmarx/google2fa' => 
-    array (
-      'pretty_version' => 'v8.0.1',
-      'version' => '8.0.1.0',
-      'aliases' => 
-      array (
-      ),
-      'reference' => '80c3d801b31fe165f8fe99ea085e0a37834e1be3',
+      'reference' => '71a4189228f93a9662574dc8c65e77ef55061b59',
     ),
   ),
 );
