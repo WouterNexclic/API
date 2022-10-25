@@ -63,10 +63,6 @@ else{
 
 $Domain = 'http' . (isset($_SERVER['HTTPS']) ? 's' : '') . '://' . "{$_SERVER['HTTP_HOST']}";
 
-$Api_key = "some_api_key";
-$Start_date= date('d-m-y');
-$End_date= date('d-m-y');
-$Format = "json";
 $Gender = $_POST['gender'];
 $Looking_for = $_POST['looking_for'];
 $Username = $_POST['username'];
@@ -79,7 +75,7 @@ $Country = "get_geocode";
 $City = "get_citycode";
 $Terms_accepted = $_POST['terms_accepted'];
 
-$header = "location: ../index.php?start_date=$Start_date&end_date=$End_date&api_key=$Api_key&format=$Format&fields=id,date,type,cost,status,confirms,site,currency,commissions,campaign";
+$header = "location: ../index.php";
 
 if(isset($Terms_accepted) && $Terms_accepted == 'Yes') {
     $Terms_accepted = 1;
@@ -97,15 +93,6 @@ if(isset($Date) && $Date != 'Yes' &&  isset($Month) && $Month != 'Yes' &&  isset
     $Birthday_time = strtotime($str);
 
     $Birthday = date('Y-m-d',$Birthday_time);
-
-    $datetime = new DateTime($Birthday);
-
-    $today = new DateTime();
-    $today->setTimestamp(date('Y-m-d'));
-
-    $diff = date_diff($datetime, $today);
-
-    $Age = $diff->format('%y');
 }
 else
 {
@@ -138,7 +125,6 @@ $table = "CREATE TABLE IF NOT EXISTS `users` (
   `Username` varchar(255) DEFAULT NULL,
   `Email` varchar(255) DEFAULT NULL,
   `Birthday` date DEFAULT NULL,
-  `Age` int(11) DEFAULT NULL,
   `Country` varchar(255) DEFAULT NULL,
   `City` varchar(255) DEFAULT NULL,
   `IP` varchar(15) DEFAULT NULL,
@@ -157,7 +143,7 @@ $table_statement = $conn->prepare($table);
 
 $table_statement->execute();
 
-$query = "INSERT INTO users (Gender, Looking_for, Username, Email, Birthday, Age, Country, City, IP, Device, OS, Browser, Domain, Referal, Reffer, Terms_accepted) VALUES(:Gender, :Looking_for, :Username, :Email, :Birthday, :Age, :Country, :City, :IP, :Device, :OS, :Browser, :Domain, :Referal, :Reffer, :Terms_accepted)";
+$query = "INSERT INTO users (Gender, Looking_for, Username, Email, Birthday, Country, City, IP, Device, OS, Browser, Domain, Referal, Reffer, Terms_accepted) VALUES(:Gender, :Looking_for, :Username, :Email, :Birthday, :Country, :City, :IP, :Device, :OS, :Browser, :Domain, :Referal, :Reffer, :Terms_accepted)";
 
 $statement = $conn->prepare($query);
 
@@ -171,7 +157,6 @@ $statement->execute([
     ":Username" => $Username,
     ":Email" => $Email,
     ":Birthday" => $Birthday,
-    ":Age" => $Age,
     ":Country" => $Country,
     ":City" => $City,
     ":IP" => $IP,

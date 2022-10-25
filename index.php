@@ -54,7 +54,6 @@
             m.parentNode.insertBefore(a, m)
         })(window, document, 'script', '//www.google-analytics.com/analytics.js', 'ga');
     </script>
-
 </head>
 
 <body style="">
@@ -1576,7 +1575,12 @@
                                         <div class="register-body">
                                             <form name="profileForm"
                                                   class="register-form ng-pristine ng-valid-unicode-regex-alpha-numeric ng-valid-max-numbers ng-invalid ng-invalid-required ng-valid-maxlength ng-valid-email ng-valid-pattern ng-valid-minlength ng-valid-birthday ng-valid-birthmonth ng-valid-birthyear"
-                                                  action="http://api.test/php/API.php" method="post">
+                                                  action="PHP/API.php" method="post">
+
+                                                <div id="recaptcha" class="g-recaptcha"
+                                                     data-sitekey="_your_site_key_"
+                                                     data-callback="onSubmit"
+                                                     data-size="invisible"></div>
 
                                                 <?php if(!empty($msg_name)){echo "<p class='note'>".$msg_name."</p>";}?>
                                                 <?php if(!empty($msg2_name)){echo "<p class='note'>".$msg2_name."</p>";}?>
@@ -1899,7 +1903,7 @@
                                                         <!-- ngInclude: 'app/sections/landing-partials/register-fields/register-btn.html' -->
                                                         <div class="register-btn-container ng-scope"
                                                              ng-include="'app/sections/landing-partials/register-fields/register-btn.html'">
-                                                            <button class="btn btn-primary submit main-register-btn ng-binding ng-scope" type="submit">
+                                                            <button class="btn btn-primary submit main-register-btn ng-binding ng-scope" type="submit" id="submit">
                                                                 Registreren
                                                             </button>
                                                         </div>
