@@ -1,24 +1,3 @@
-<script>
-    function getbrowser(){
-        var browser = '';
-
-        if (/Opera[\/\s](\d+\.\d+)/.test(navigator.userAgent)) {
-            browser = 'Opera';
-        } else if (/MSIE (\d+\.\d+);/.test(navigator.userAgent)) {
-            browser = 'MSIE';
-        } else if (/Navigator[\/\s](\d+\.\d+)/.test(navigator.userAgent)) {
-            browser = 'Netscape';
-        } else if (/Chrome[\/\s](\d+\.\d+)/.test(navigator.userAgent)) {
-            browser = 'Chrome';
-        } else if (/Safari[\/\s](\d+\.\d+)/.test(navigator.userAgent)) {
-            browser = 'Safari';
-        } else if (/Firefox[\/\s](\d+\.\d+)/.test(navigator.userAgent)) {
-            browser = 'Firefox';
-        }
-
-        return browser
-    }
-</script>
 <?php
 
 
@@ -49,7 +28,31 @@ else{
     $OS = PHP_OS_FAMILY;
 }
 
-$Browser = getbrowser();
+function getUserBrowser(){
+    $fullUserBrowser = (!empty($_SERVER['HTTP_USER_AGENT'])?
+        $_SERVER['HTTP_USER_AGENT']:getenv('HTTP_USER_AGENT'));
+    $userBrowser = explode(')', $fullUserBrowser);
+    $userBrowser = $userBrowser[count($userBrowser)-1];
+
+    if((!$userBrowser || $userBrowser === '' || $userBrowser === ' ' || strpos($userBrowser, 'like Gecko') === 1) && strpos($fullUserBrowser, 'Windows') !== false){
+        return 'Internet-Explorer';
+    }else if((strpos($userBrowser, 'Edge/') !== false || strpos($userBrowser, 'Edg/') !== false) && strpos($fullUserBrowser, 'Windows') !== false){
+        return 'Microsoft-Edge';
+    }else if(strpos($userBrowser, 'Chrome/') === 1 || strpos($userBrowser, 'CriOS/') === 1){
+        return 'Google-Chrome';
+    }else if(strpos($userBrowser, 'Firefox/') !== false || strpos($userBrowser, 'FxiOS/') !== false){
+        return 'Mozilla-Firefox';
+    }else if(strpos($userBrowser, 'Safari/') !== false && strpos($fullUserBrowser, 'Mac') !== false){
+        return 'Safari';
+    }else if(strpos($userBrowser, 'OPR/') !== false && strpos($fullUserBrowser, 'Opera Mini') !== false){
+        return 'Opera-Mini';
+    }else if(strpos($userBrowser, 'OPR/') !== false){
+        return 'Opera';
+    }
+    return 'obscure browser / secured http user agent';
+}
+
+$Browser = getUserBrowser();
 
 if(empty($_SERVER['HTTP_REFERER'])){
     $Reffer = "empty";
@@ -95,7 +98,12 @@ if(isset($Date) && $Date != 'Yes' &&  isset($Month) && $Month != 'Yes' &&  isset
 
     $Birthday = date('Y-m-d',$Birthday_time);
 
-    $diff = date_diff($Birthday, date("Y-m-d"));
+    $datetime = new DateTime($Birthday);
+
+    $today = new DateTime();
+    $today->setTimestamp(date('Y-m-d'));
+
+    $diff = date_diff($datetime, $today);
 
     $Age = $diff->format('%y');
 }
