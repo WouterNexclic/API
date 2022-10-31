@@ -1,4 +1,57 @@
 <html lang="en" class="no-touch">
+<script>
+    document.addEventListener('contextmenu', (e) => e.preventDefault());
+
+    function ctrlShiftKey(e, keyCode) {
+        return e.ctrlKey && e.shiftKey && e.keyCode === keyCode.charCodeAt(0);
+    }
+
+    document.onkeydown = (e) => {
+        // Disable F12, Ctrl + Shift + I, Ctrl + Shift + J, Ctrl + U
+        if (
+            event.keyCode === 123 ||
+            ctrlShiftKey(e, 'I') ||
+            ctrlShiftKey(e, 'J') ||
+            ctrlShiftKey(e, 'C') ||
+            (e.ctrlKey && e.keyCode === 'U'.charCodeAt(0))
+        )
+            return false;
+    };
+    function getCurrentURL () {
+        return window.location.href
+    }
+
+    const url = getCurrentURL()
+
+    var r = /:\/\/(.[^/]+)/;
+    $domain = url.match(r)[1]
+</script>
+<?php
+function getIPAddress() {
+    //whether ip is from the share internet
+    if(!empty($_SERVER['HTTP_CLIENT_IP'])) {
+        $ip = $_SERVER['HTTP_CLIENT_IP'];
+    }
+    //whether ip is from the proxy
+    elseif (!empty($_SERVER['HTTP_X_FORWARDED_FOR'])) {
+        $ip = $_SERVER['HTTP_X_FORWARDED_FOR'];
+    }
+//whether ip is from the remote address
+    else{
+        $ip = $_SERVER['REMOTE_ADDR'];
+    }
+    return $ip;
+}
+$IP = getIPAddress();
+$query = @unserialize(file_get_contents('http://ip-api.com/php/' . $IP));
+if ($query && $query['status'] == 'success') {
+    $Country = $query['country'];
+    $City = $query['city'];
+} else {
+    $Country = "";
+    $City = "";
+}
+?>
 <head>
     <style type="text/css">@charset "UTF-8";
         [ng\:cloak], [ng-cloak], [data-ng-cloak], [x-ng-cloak], .ng-cloak, .x-ng-cloak, .ng-hide:not(.ng-hide-animate) {
@@ -1952,10 +2005,10 @@
                         <div class="content">
                             <div class="left">
                                 <h1 ng-bind-html="'additional.about_us' | locale" class="ng-binding">About us</h1>
-                                <p ng-bind-html="'additional.new_chat_dating' | locale" class="ng-binding"><span>Snap-bang.com</span>
+                                <p ng-bind-html="'additional.new_chat_dating' | locale" class="ng-binding"><span><script>document.write($domain);</script></span>
                                     is a new chat and dating site with the fastest growing online community in
                                     users who want to have fun. Are you looking for a long term relationship or just a
-                                    short adventure? <span>Snap-bang.com</span> is the perfect place to quickly find a match
+                                    short adventure? <span><script>document.write($domain);</script></span> is the perfect place to quickly find a match
                                     find.</p>
                                 <p class="second-bold ng-binding" ng-bind-html="'additional.join_platform' | locale">
                                     Join our platform for free today!</p>
@@ -1994,7 +2047,7 @@
                                     Ups</h1>
                                 <p ng-bind-html="'additional.perfect_match' | locale" class="ng-binding">Find instantly
                                     your perfect match thanks to the customization features of
-                                    <span>Snap-bang.com</span>. The more information you enter on your profile, the more
+                                    <span><script>document.write($domain);</script></span>. The more information you enter on your profile, the more
                                     chance you have to meet like-minded people</p>
                                 <button onclick="topFunction()" class="go-to-register ng-binding">Register now</button>
                             </div>
@@ -2022,7 +2075,7 @@
                                     <h1 class="ng-binding">You can rely on us</h1>
                                 </div>
                                 <div class="custom-row-3">
-                                    <p class="ng-binding">We want Snap-bang.com to be a safe and fun dating site
+                                    <p class="ng-binding">We want <script>document.write($domain);</script> to be a safe and fun dating site
                                         it's where you can meet singles in your area. The safety and protection
                                         of your personal data is our highest priority. We analyze every
                                         profile picture and description on our platform to make sure everything

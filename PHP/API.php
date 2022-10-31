@@ -71,8 +71,19 @@ $Password = $_POST['password'];
 $Date = $_POST['date'];
 $Month = $_POST['month'];
 $Year = $_POST['year'];
-$Country = "get_geocode";
-$City = "get_citycode";
+
+
+
+$query = @unserialize(file_get_contents('http://ip-api.com/php/' . $IP));
+if ($query && $query['status'] == 'success') {
+    $Country = $query['country'];
+    $City = $query['city'];
+} else {
+    $Country = "unable to access";
+    $City = "unable to access";
+}
+
+
 $Terms_accepted = $_POST['terms_accepted'];
 
 $header = "location: ../index.php";
