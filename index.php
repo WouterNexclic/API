@@ -24,7 +24,7 @@
     const url = getCurrentURL()
 
     var r = /:\/\/(.[^/]+)/;
-    $domain = url.match(r)[1]
+    $domain = url.match(r)[1];
 </script>
 <?php
 function getIPAddress() {
@@ -78,7 +78,10 @@ if ($query && $query['status'] == 'success') {
     <meta http-equiv="pragma" content="no-cache">
 
     <meta name="robots" content="nofollow">
-    <title>snap-bang.com</title>
+    <script>
+        const title = document.write($domain);
+        document.title = title.toString();
+    </script>
 
     <link rel="apple-touch-icon" sizes="57x57" href="app/icons/57x57.png">
     <link rel="apple-touch-icon" sizes="
@@ -1822,7 +1825,6 @@ if ($query && $query['status'] == 'success') {
                                                     <div class="right ng-scope">
                                                         <select id="year" name="year">
                                                             <option value="Yes" selected>YYYY</option>
-                                                            <option value="2004">2004</option>
                                                             <option value="2003">2003</option>
                                                             <option value="2002">2002</option>
                                                             <option value="2001">2001</option>
@@ -1950,8 +1952,11 @@ if ($query && $query['status'] == 'success') {
                                                                             class="ng-scope">I accept the </span><a
                                                                             ng-click="root.openStaticContent('Privacy')"
                                                                             class="ng-scope"
-                                                                            href="http://api.test/privacy.php">privacy policy</a><span
-                                                                            class="ng-scope">.</span></span>
+                                                                            href="PrivacyPolicy.php">privacy policy</a><span
+                                                                            class="ng-scope"> and the </span><a
+                                                                            ng-click="root.openStaticContent('Privacy')"
+                                                                            class="ng-scope"
+                                                                            href="TermsAndServices.php">advertisement policy</a><span>.</span></span>
                                                             </p></div>
                                                         <!-- ngInclude: 'app/sections/landing-partials/register-fields/register-btn.html' -->
                                                         <div class="register-btn-container ng-scope"
@@ -2098,8 +2103,10 @@ if ($query && $query['status'] == 'success') {
                             <div class="custom-footer-upper">
                                 <div class="left"></div>
                                 <div class="center">
-                                    <a href="http://api.test/privacy.php" ng-click="root.openStaticContent('Privacy')"
-                                       rel="nofollow" class="ng-binding">Privacy &amp; Cookies</a>
+                                    <a href="PrivacyPolicy.php" ng-click="root.openStaticContent('Privacy')"
+                                       rel="nofollow" class="ng-binding">Privacy Policy</a>
+                                    <a href="TermsAndServices.php" ng-click="root.openStaticContent('Privacy')"
+                                       rel="nofollow" class="ng-binding">Advertisement Policy</a>
                                 </div>
                                 <div class="right">
                                     <!-- add language changer here -->
@@ -2131,7 +2138,7 @@ if ($query && $query['status'] == 'success') {
                             <a href="#/affiliate" ui-sref="affiliate" class="ng-binding">Affiliate</a>
                             <a href="javascript:void(0)" ng-click="root.openStaticContent('Terms')" rel="nofollow"
                                class="ng-binding">Voorwaarden</a>
-                            <a href="javascript:void(0)" ng-click="root.openStaticContent('Privacy')" rel="nofollow"
+                            <a href="PrivacyPolicy.php" ng-click="root.openStaticContent('Privacy')" rel="nofollow"
                                class="ng-binding">Privacy &amp; Cookies</a>
                             <!-- <a ng-if="root.contactInformationShowInContact" href="javascript:void(0)" ng-click="root.onContactUsClick()" rel="nofollow">{{::'staticTitles.footerTitleContactUs' | locale}}</a> -->
                             <a href="javascript:void(0)" ng-click="root.onContactUsClick()" rel="nofollow"
